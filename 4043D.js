@@ -1,6 +1,6 @@
 "use strict";
 
-const renderer = new THREE.WebGLRenderer();
+const renderer = new THREE.WebGLRenderer({ antialias: true });
 document.body.appendChild(renderer.domElement);
 
 // There's no reason to set the aspect here because we're going
@@ -11,18 +11,19 @@ camera.position.z = 400;
 
 const scene = new THREE.Scene();
 const geometry = new THREE.BoxGeometry(200, 200, 200);
-const material = new THREE.MeshBasicMaterial({
-  color: 0x66ff00,
-  flatShading: true,
-  wireframe: true
+const material = new THREE.MeshPhongMaterial({
+  color: 0x808080,
+  specular: 0xffffff,
+  shininess: 50,
+  flatShading: true
 });
 
 const mesh = new THREE.Mesh(geometry, material);
 scene.add(mesh);
 
-//const light1 = new THREE.PointLight(0xF3F3F3, 2, 0);
-//light1.position.set(200, 100, 300);
-//scene.add(light1);
+const light1 = new THREE.PointLight(0xF3F3F3, 2, 0);
+light1.position.set(200, 100, 300);
+scene.add(light1);
 
 function resizeCanvasToDisplaySize() {
   const canvas = renderer.domElement;
@@ -43,9 +44,9 @@ function animate(time) {
 
   resizeCanvasToDisplaySize();
 
-  mesh.rotation.x = Math.sin(time * 1.5);
-  mesh.rotation.y = Math.cos(time * 1);
-
+  mesh.rotation.x = time * 0.5;
+  mesh.rotation.y = time * 1;
+  material.color.setHSL(Math.sin(1.5*time),1,0.1);
   renderer.render(scene, camera);
   requestAnimationFrame(animate);
 }
