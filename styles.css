@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+
+@keyframes epicText {
+    0% {
+        transform: translate(-50%,-50%) rotate(-3deg);
+    }
+    25% {
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+    50% {
+        transform: translate(-50%,-50%) rotate(3deg);
+    }
+    75% {
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+    100% {
+        background-position: 200% center;
+        transform: translate(-50%,-50%) rotate(-3deg);
+    }
+}
+
+body {
+    background-color: #000;
+    color : #fff;
+    font-family: lucida console, Courier, monospace;
+    margin: 0;
+}
+
+maintext {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 4em;
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+.rainbow-text {
+    background: linear-gradient(90deg, rgba(255, 0, 0, 1) 0%, rgba(255, 154, 0, 1) 10%, rgba(208, 222, 33, 1) 20%,
+        rgba(79, 220, 74, 1) 30%, rgba(63, 218, 216, 1) 40%, rgba(47, 201, 226, 1) 50%, rgba(28, 127, 238, 1) 60%,
+        rgba(95, 21, 242, 1) 70%, rgba(186, 12, 248, 1) 80%, rgba(251, 7, 217, 1) 90%, rgba(255, 0, 0, 1) 100%);
+    background-size: 200% auto;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: epicText 4s linear infinite;
+    color: inherit;
+}
+
+canvas { width: 100vw; height: 100vh; display: block; }
