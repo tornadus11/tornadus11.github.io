@@ -21,11 +21,11 @@ let teaGeo;
 
 teaGeo = new TeapotGeometry( 20,
     56,
-    false,
     true,
     true,
+    true,
     false,
-    false );
+    true );
 
 
 camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 1000 );
