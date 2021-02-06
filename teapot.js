@@ -34,7 +34,7 @@ camera.position.set( 0, 0, 120 );
 scene = new THREE.Scene();
 scene.background = new THREE.Color( 0x000000 );
 
-renderer = new THREE.WebGLRenderer();
+renderer = new THREE.WebGLRenderer({ antialias: true });
 document.body.appendChild(renderer.domElement);
 renderer.physicallyCorrectLights = true;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
