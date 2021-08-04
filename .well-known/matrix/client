@@ -6,6 +6,15 @@
 	"m.identity_server": {
 		"base_url": "https://matrix.tornadus.net"
 	}
+,
+	"m.integrations": {
+		"managers": [
+			{
+				"api_url": "https://dimension.tornadus.net/api/v1/scalar",
+				"ui_url": "https://dimension.tornadus.net/element"
+			}
+		]
+	}
 	,
 	"io.element.e2ee": {
 		"default": true,
