@@ -1,0 +1,18 @@
+{
+	"m.homeserver": {
+		"base_url": "https://matrix.tornadus.net"
+	}
+,
+	"m.identity_server": {
+		"base_url": "https://matrix.tornadus.net"
+	}
+	,
+	"io.element.e2ee": {
+		"default": true,
+		"secure_backup_required": false,
+		"secure_backup_setup_methods": []
+	},
+	"im.vector.riot.e2ee": {
+		"default": true
+	}
+}
